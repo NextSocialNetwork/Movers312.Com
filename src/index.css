@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Geometric Balance - Bold crisp color palette */
+  --color-brand-blue: #2563eb;
+  --color-brand-cyan: #0284c7;
+  --color-brand-gold: #f59e0b;
+  --color-brand-charcoal: #0f172a;
+}
+
+/* Base style improvements for raw modernist look */
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom geometric layout utilities */
+.geo-border-heavy {
+  border-left: 4px solid var(--color-brand-blue);
+}
+
+.geo-border-charcoal {
+  border-left: 4px solid var(--color-brand-charcoal);
+}
+
+.geo-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.font-black-header {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
