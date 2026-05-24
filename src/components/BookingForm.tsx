@@ -346,6 +346,16 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
             >
               +1 (773) 335-5446
             </a>
+
+            <div className="text-center pt-2 border-t border-slate-800">
+              <span className="text-[9px] uppercase font-bold text-slate-400 block tracking-wider mb-1 font-mono">Or Send Us An Email</span>
+              <a 
+                href="mailto:MegaMovingChicago@gmail.com" 
+                className="text-white hover:text-brand-gold font-bold font-mono text-[11px] transition-colors break-all block"
+              >
+                MegaMovingChicago@Gmail.com
+              </a>
+            </div>
           </div>
 
         </div>

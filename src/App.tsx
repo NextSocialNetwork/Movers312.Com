@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 import { 
   Phone, Truck, Users, Shield, Clock, HelpCircle, Smartphone, 
   MapPin, Clipboard, ArrowRight, Star, HeartHandshake, CheckCircle2, 
-  Calendar, Check, AlertTriangle, Sparkles, X, ChevronRight, Calculator
+  Calendar, Check, AlertTriangle, Sparkles, X, ChevronRight, Calculator,
+  Mail
 } from 'lucide-react';
 import { Booking, HomeSizeKey, HOME_SIZES, PRICING } from './types';
 import QuoteCalculator from './components/QuoteCalculator';
 import BookingForm from './components/BookingForm';
 import TrustBadges from './components/TrustBadges';
 import MyBookings from './components/MyBookings';
+import chicagoMovingTruck from './assets/images/chicago_moving_truck_1779593354510.png';
 
 export default function App() {
   // Navigation & Schedulers State
@@ -106,9 +108,16 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Immediate Dispatch</span>
               <a 
                 href="tel:+17733355446" 
-                className="text-xl font-bold text-brand-blue tracking-tight hover:text-brand-cyan transition-colors"
+                className="text-base font-bold text-brand-blue tracking-tight hover:text-brand-cyan transition-colors"
               >
                 +1 (773) 335-5446
+              </a>
+              <a 
+                href="mailto:MegaMovingChicago@gmail.com"
+                className="text-[10px] uppercase font-bold text-slate-400 hover:text-brand-blue transition-colors mt-0.5 tracking-wider font-mono flex items-center justify-end gap-1"
+              >
+                <Mail className="w-3 h-3 text-slate-450" />
+                <span>MegaMovingChicago@Gmail.com</span>
               </a>
             </div>
 
@@ -196,7 +205,7 @@ export default function App() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-none overflow-hidden shadow-xl border border-slate-200 bg-slate-900 group">
                 <img 
-                  src="/src/assets/images/chicago_moving_truck_1779593354510.png"
+                  src={chicagoMovingTruck}
                   alt="Mega Moving Chicago 16 Foot Box Truck and Movers"
                   referrerPolicy="no-referrer"
                   className="w-full h-72 sm:h-96 object-cover select-none pointer-events-none group-hover:scale-105 transition-transform duration-700" 
@@ -380,9 +389,13 @@ export default function App() {
             <div className="space-y-3">
               <h4 className="font-bold text-sm text-brand-gold uppercase tracking-wider">Fast Contact Direct</h4>
               <ul className="space-y-2 text-xs text-slate-300">
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 font-bold select-text">
                   <Phone className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
-                  <a href="tel:+17733355446" className="font-bold hover:text-white transition-colors">+1 (773) 335-5446</a>
+                  <a href="tel:+17733355446" className="hover:text-white transition-colors">+1 (773) 335-5446</a>
+                </li>
+                <li className="flex items-center gap-2 font-bold select-text">
+                  <Mail className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
+                  <a href="mailto:MegaMovingChicago@gmail.com" className="hover:text-white transition-colors">MegaMovingChicago@Gmail.com</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-brand-cyan">📍</span>
