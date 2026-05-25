@@ -417,11 +417,11 @@ export default function App() {
 
               {/* Cash App Payment Notification on Success */}
               <div className="bg-amber-50 border-2 border-amber-305 rounded-none p-5 text-left max-w-lg mx-auto space-y-2 font-mono">
-                <span className="text-[10px] text-amber-800 font-extrabold uppercase block tracking-wider">⚠️ Paid Security Deposit Required</span>
-                <p className="text-[11px] text-slate-700 leading-relaxed font-sans normal-case font-medium">To lock your dispatch slot, the <strong className="text-slate-900">$100 security deposit</strong> must be paid via Cash App. This is deducted from the 3-hour minimum ($450 total base including the $100 security deposit), leaving a Grand Total of <strong className="text-slate-950 font-bold">${newestBooking.totalCost}</strong> due on the move day.</p>
-                <div className="bg-white p-2.5 border border-amber-200 text-xs font-black select-all flex items-center justify-between text-slate-900">
-                  <span>CASH APP TAG:</span>
-                  <span className="text-emerald-600 bg-emerald-50 px-2.5 py-1 border border-emerald-200 text-[13px] font-black select-all font-mono">$Muahz26</span>
+                <span className="text-[10px] text-amber-800 font-extrabold uppercase block tracking-wider leading-relaxed text-center">⚠️ Security Deposit of $100 Must be Paid Upon Booking:</span>
+                <p className="text-[11px] text-slate-700 leading-relaxed font-sans normal-case font-medium text-center">To lock your dispatch slot, the <strong className="text-slate-900">$100 security deposit</strong> must be paid via Cash App. This is deducted from the 3-hour minimum ($450 total base including the $100 security deposit), leaving a Grand Total of <strong className="text-slate-950 font-bold">${newestBooking.totalCost}</strong> due on the move day.</p>
+                <div className="bg-white p-3 border border-amber-200 text-xs font-black select-all flex flex-col items-center justify-center gap-2 text-slate-900 text-center">
+                  <span className="text-[10px] tracking-wider text-slate-500 font-mono uppercase">CASH APP:</span>
+                  <span className="text-white bg-emerald-600 px-4 py-1.5 border border-emerald-500 text-[14px] font-black tracking-widest select-all font-mono rounded animate-pulse inline-block normal-case">$Muahz26</span>
                 </div>
               </div>
 
@@ -691,8 +691,8 @@ export default function App() {
                   <Clock className="w-3.5 h-3.5 text-brand-gold" />
                   What happens next?
                 </p>
-                <p className="text-[10px] leading-normal text-slate-350 uppercase">
-                  1. Send the <strong>$100 Security Deposit</strong> via Cash App: <strong className="text-white bg-emerald-600 px-1 p-0.5 rounded font-mono select-all">$Muahz26</strong>.
+                <p className="text-[10px] leading-normal text-slate-350 uppercase flex flex-wrap items-center gap-1">
+                  1. Send the <strong>$100 Security Deposit</strong> via Cash App: <span className="text-emerald-400 font-bold ml-1 normal-case">Cash App:</span> <strong className="text-white bg-emerald-600 px-2 py-0.5 rounded font-mono select-all animate-pulse normal-case">$Muahz26</strong>.
                 </p>
                 <p className="text-[10px] leading-normal text-slate-350 uppercase">
                   2. This is fully deducted from your 3-hr minimum ($450 base, leaving a grand total of <strong>${selectedInquiry.totalCost}</strong> payable day of move).

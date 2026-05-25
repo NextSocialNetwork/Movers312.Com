@@ -82,7 +82,7 @@ export default function MyBookings({ bookings, onRefresh, onSelectBooking }: MyB
                   </div>
                   <div className="text-right">
                     <span className="text-lg font-black text-[#2563eb] block">${booking.totalCost}</span>
-                    <span className="text-[9px] uppercase font-bold text-slate-500 block">Est {booking.estimatedHours} hrs</span>
+                    <span className="text-[9px] uppercase font-bold text-slate-500 block">Est {booking.estimatedHours} Hours {booking.estimatedHours === 3 && '(Min Required)'}</span>
                     <span className="text-[8px] uppercase font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-1 py-0.5 inline-block mt-1">Deposit Deducted</span>
                   </div>
                 </div>

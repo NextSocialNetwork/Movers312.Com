@@ -237,8 +237,12 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
               <p className="text-xs leading-relaxed font-sans font-medium normal-case">
                 Our 3-hour minimum is <strong className="text-amber-950 font-bold">$450 total</strong> which includes the <strong className="text-amber-950 font-bold">$100 security deposit</strong>. The security deposit is deducted from your moving total, leaving a remaining balance of <strong className="text-amber-100 bg-[#0f172a] px-1.5 py-0.5">${calculatedData.totalPrice}</strong> on completion.
               </p>
-              <div className="bg-amber-100 p-3 border border-amber-300 font-mono text-[10px] font-black uppercase text-amber-950">
-                ⚠️ Security Deposit Must be Paid via Cash App: <span className="bg-emerald-600 text-white px-2 py-0.5 text-xs inline-block tracking-widest select-all font-bold font-mono">$Muahz26</span>
+              <div className="bg-amber-100 p-3 border border-amber-300 font-mono text-[10px] font-black uppercase text-amber-950 flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+                <span>⚠️ Security Deposit of $100 Must be Paid Upon Booking:</span>
+                <div className="flex items-center gap-1.5 justify-center font-sans tracking-normal font-medium normal-case">
+                  <span className="text-emerald-700 font-extrabold uppercase text-[10px]">Cash App:</span>
+                  <span className="bg-emerald-600 text-white px-3 py-1 text-xs inline-block tracking-widest select-all font-black font-mono rounded animate-pulse normal-case">$Muahz26</span>
+                </div>
               </div>
             </div>
 

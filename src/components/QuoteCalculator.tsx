@@ -193,12 +193,12 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
         {/* Sliders / Hour adjustments */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
           {/* Hour Selector Slider (Abides by 3 hour min) */}
-          <div className="space-y-4">
+          <div className="space-y-4 p-5 bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-dashed border-slate-300 rounded-none relative shadow-sm hover:border-[#2563eb]/40 transition-colors">
             <div className="flex justify-between items-center">
-              <label className="text-[11px] font-bold text-slate-700 tracking-wider uppercase flex items-center gap-1.5 font-mono">
+              <label className="text-[11px] font-bold text-slate-700 tracking-wider uppercase flex items-center gap-1.5 font-mono font-bold">
                 <Clock className="w-3.5 h-3.5 text-[#2563eb]" /> Select Hours Needed
               </label>
-              <div className="flex items-center gap-1 text-sm bg-slate-50 px-3 py-1.5 border-2 border-slate-200 text-slate-900 font-mono">
+              <div className="flex items-center gap-1 text-sm bg-white px-3 py-1.5 border-2 border-slate-200 text-slate-900 font-mono shadow-sm">
                 <span className="font-bold text-[#2563eb] text-base">{displayHours}</span>
                 <span className="text-slate-550">hours</span>
               </div>
@@ -213,8 +213,8 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
               onChange={(e) => setHoursNeeded(parseInt(e.target.value))}
               className="w-full h-2.5 bg-slate-100 rounded-none appearance-none cursor-pointer accent-[#f59e0b] border border-slate-200"
             />
-            <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">
-              <span>3 Hrs Min</span>
+            <div className="flex justify-between text-[10px] items-center font-bold uppercase tracking-wider text-slate-500 font-mono">
+              <span className="text-amber-700 bg-amber-50 px-2.5 py-0.5 border border-amber-200 font-extrabold animate-pulse tracking-tight text-[9px] rounded-none select-none">★ 3 Hrs Min</span>
               <span>6 Hrs</span>
               <span>9 Hrs</span>
               <span>12 Hrs Day</span>
@@ -296,8 +296,12 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
                 <p className="text-slate-350 leading-relaxed font-sans normal-case">
                   Security Deposit is deducted from the 3-hour minimum <strong className="text-white">$450 total</strong> (which includes the $100 security deposit).
                 </p>
-                <div className="mt-2 text-amber-400 font-black tracking-wider text-[11px] bg-amber-950/60 p-2 border border-amber-500/10">
-                  ⚠️ Security Deposit Must be Paid via Cash App: <span className="text-white bg-emerald-600 px-2 py-0.5 select-all">$Muahz26</span>
+                <div className="mt-2 text-amber-400 font-black tracking-wider text-[11px] bg-amber-950/60 p-2.5 border border-amber-500/10 flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+                  <span>⚠️ Security Deposit of $100 Must be Paid Upon Booking:</span>
+                  <div className="flex items-center gap-1.5 justify-center font-sans tracking-normal font-medium normal-case">
+                    <span className="text-emerald-400 font-extrabold uppercase text-[10px]">Cash App:</span>
+                    <span className="text-white bg-emerald-600 px-3 py-1 select-all rounded font-mono font-black text-xs inline-block tracking-widest animate-pulse normal-case">$Muahz26</span>
+                  </div>
                 </div>
               </div>
 
