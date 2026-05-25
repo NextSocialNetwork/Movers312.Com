@@ -6,37 +6,96 @@
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Geometric Balance - Bold crisp color palette */
+  /* Premium High-Contrast Light Theme Palette */
   --color-brand-blue: #2563eb;
   --color-brand-cyan: #0284c7;
   --color-brand-gold: #f59e0b;
   --color-brand-charcoal: #0f172a;
 }
 
-/* Base style improvements for raw modernist look */
+/* Custom base style overrides for premium clean light-theme */
 body {
   font-family: var(--font-sans);
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #f8fafc; /* Pristine light slate */
+  color: #1e293b; /* Readable dark grey */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
 
-/* Custom geometric layout utilities */
+/* 3D Extrusion Design Utilities with premium shadows and active states */
 .geo-border-heavy {
   border-left: 4px solid var(--color-brand-blue);
 }
 
 .geo-border-charcoal {
-  border-left: 4px solid var(--color-brand-charcoal);
+  border-left: 4px solid var(--color-brand-gold);
+}
+
+/* Tactical 3D card layout with rigid solid drop shadow and polished border lines */
+.td-card {
+  background-color: #ffffff; /* Crisp White */
+  border: 2px solid #0f172a; /* Sharp Charcoal */
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.td-card:hover {
+  border-color: #2563eb;
+}
+
+/* Pressed 3D elements */
+.td-btn-blue {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 2px solid #0f172a;
+  border-bottom: 5px solid #0f172a; /* 3D bottom thickness */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease;
+}
+.td-btn-blue:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+.td-btn-blue:active {
+  border-bottom-width: 1px;
+  transform: translateY(4px);
+}
+
+.td-btn-gold {
+  background-color: #f59e0b;
+  color: #0f172a;
+  border: 2px solid #0f172a;
+  border-bottom: 5px solid #78350f; /* 3D bottom thickness */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease;
+}
+.td-btn-gold:hover {
+  background-color: #fbbf24;
+}
+.td-btn-gold:active {
+  border-bottom-width: 1px;
+  transform: translateY(4px);
+}
+
+/* 3D sunken inputs */
+.td-input {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 2px solid #0f172a !important;
+  transition: all 0.2s ease;
+}
+.td-input:focus {
+  border-color: #2563eb !important;
+  outline: none !important;
 }
 
 .geo-card {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 2px solid #0f172a;
 }
 
 .font-black-header {
