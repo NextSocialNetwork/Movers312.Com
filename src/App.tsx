@@ -421,7 +421,16 @@ export default function App() {
                 <p className="text-[11px] text-slate-700 leading-relaxed font-sans normal-case font-medium text-center">To lock your dispatch slot, the <strong className="text-slate-900">$100 security deposit</strong> must be paid via Cash App. This is deducted from the 3-hour minimum ($450 total base including the $100 security deposit), leaving a Grand Total of <strong className="text-slate-950 font-bold">${newestBooking.totalCost}</strong> due on the move day.</p>
                 <div className="bg-white p-3 border border-amber-200 text-xs font-black select-all flex flex-col items-center justify-center gap-2 text-slate-900 text-center">
                   <span className="text-[10px] tracking-wider text-slate-500 font-mono uppercase">CASH APP:</span>
-                  <span className="text-white bg-emerald-600 px-4 py-1.5 border border-emerald-500 text-[14px] font-black tracking-widest select-all font-mono rounded animate-pulse inline-block normal-case">$Muahz26</span>
+                  <a
+                    href="https://cash.app/$muahz26"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-5 py-2 border border-emerald-500 text-[14px] font-black tracking-widest select-all font-mono rounded animate-pulse inline-flex items-center gap-1.5 normal-case transition-all duration-200 cursor-pointer shadow-md"
+                    title="Click to open Cash App"
+                  >
+                    <span>$muahz26</span>
+                    <span className="text-[11px] opacity-90 font-sans font-medium">(Open Link)</span>
+                  </a>
                 </div>
               </div>
 
@@ -692,7 +701,17 @@ export default function App() {
                   What happens next?
                 </p>
                 <p className="text-[10px] leading-normal text-slate-350 uppercase flex flex-wrap items-center gap-1">
-                  1. Send the <strong>$100 Security Deposit</strong> via Cash App: <span className="text-emerald-400 font-bold ml-1 normal-case">Cash App:</span> <strong className="text-white bg-emerald-600 px-2 py-0.5 rounded font-mono select-all animate-pulse normal-case">$Muahz26</strong>.
+                  1. Send the <strong>$100 Security Deposit</strong> via Cash App: <span className="text-emerald-400 font-bold ml-1 normal-case">Cash App:</span>{' '}
+                  <a
+                    href="https://cash.app/$muahz26"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-2.5 py-1 rounded font-mono select-all animate-pulse normal-case transition-all duration-200 cursor-pointer hover:underline inline-flex items-center gap-1 shadow-md"
+                    title="Click to open Cash App"
+                  >
+                    <strong>$muahz26</strong>
+                    <span className="text-[8px] opacity-80 font-sans font-normal">(Open Link)</span>
+                  </a>
                 </p>
                 <p className="text-[10px] leading-normal text-slate-350 uppercase">
                   2. This is fully deducted from your 3-hr minimum ($450 base, leaving a grand total of <strong>${selectedInquiry.totalCost}</strong> payable day of move).

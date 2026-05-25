@@ -300,7 +300,16 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
                   <span>⚠️ Security Deposit of $100 Must be Paid Upon Booking:</span>
                   <div className="flex items-center gap-1.5 justify-center font-sans tracking-normal font-medium normal-case">
                     <span className="text-emerald-400 font-extrabold uppercase text-[10px]">Cash App:</span>
-                    <span className="text-white bg-emerald-600 px-3 py-1 select-all rounded font-mono font-black text-xs inline-block tracking-widest animate-pulse normal-case">$Muahz26</span>
+                    <a
+                      href="https://cash.app/$muahz26"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 px-3 py-1 rounded font-mono font-black text-xs inline-flex items-center gap-1 tracking-widest animate-pulse normal-case transition-all duration-200 cursor-pointer shadow-md select-all"
+                      title="Click to open Cash App"
+                    >
+                      <span>$muahz26</span>
+                      <span className="text-[10px] opacity-80 font-sans font-normal">(Open Link)</span>
+                    </a>
                   </div>
                 </div>
               </div>

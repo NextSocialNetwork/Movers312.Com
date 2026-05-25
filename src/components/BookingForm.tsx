@@ -80,7 +80,7 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
         "Crew Size Assigned": `${2 + newBooking.extraMoversCount} Movers`,
         "Estimated Duration": `${newBooking.estimatedHours} Hours Required`,
         "Grand Total (Remaining Due on Move Day)": `$${newBooking.totalCost}`,
-        "Deducted Security Deposit (Cash App: $Muahz26)": "$100",
+        "Deducted Security Deposit (Cash App: $muahz26)": "$100",
         "Total Base Cost": `$${newBooking.totalCost + 100}`,
         "Special Notes": notes || 'None provided',
         _replyto: email
@@ -241,7 +241,16 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
                 <span>⚠️ Security Deposit of $100 Must be Paid Upon Booking:</span>
                 <div className="flex items-center gap-1.5 justify-center font-sans tracking-normal font-medium normal-case">
                   <span className="text-emerald-700 font-extrabold uppercase text-[10px]">Cash App:</span>
-                  <span className="bg-emerald-600 text-white px-3 py-1 text-xs inline-block tracking-widest select-all font-black font-mono rounded animate-pulse normal-case">$Muahz26</span>
+                  <a
+                    href="https://cash.app/$muahz26"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white px-3 py-1 text-xs inline-flex items-center gap-1 tracking-widest select-all font-black font-mono rounded animate-pulse normal-case transition-all duration-200 cursor-pointer shadow-md"
+                    title="Click to open Cash App"
+                  >
+                    <span>$muahz26</span>
+                    <span className="text-[10px] opacity-85 font-sans font-normal">(Open Link)</span>
+                  </a>
                 </div>
               </div>
             </div>
