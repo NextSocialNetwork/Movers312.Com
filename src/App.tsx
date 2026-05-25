@@ -299,7 +299,7 @@ export default function App() {
                 <div className="text-slate-500 text-left space-y-1">
                   <p>• Reserved Date: <strong className="text-slate-800">{newestBooking.movingDate}</strong></p>
                   <p>• Recommended Hours: <strong className="text-slate-800">{newestBooking.estimatedHours} hours</strong></p>
-                  <p>• Cost Projection: <strong className="text-slate-800">${newestBooking.totalCost}</strong></p>
+                  <p>• Cost Projection: <strong className="text-slate-800">${newestBooking.totalCost}</strong> <span className="text-[9px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 border border-emerald-200 font-bold tracking-wider">Includes $100 non-refundable security deposit</span></p>
                 </div>
                 <button
                   type="button"
@@ -374,7 +374,7 @@ export default function App() {
       <footer className="bg-brand-charcoal text-white border-t border-white/5 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/10 text-sm">
             
             <div className="space-y-3">
               <span className="text-lg font-black tracking-widest text-white flex items-center gap-2">
@@ -413,7 +413,7 @@ export default function App() {
               <p className="text-xs text-slate-400 leading-relaxed">
                 Mega Moving Chicago operates legally under Illinois ICC regulations. Moving blanket wrap protection, tools, dollies, cargo straps, and 16-foot high-capacity vehicle come standard with every dispatch.
               </p>
-              <div className="flex items-center gap-3 pt-1">
+              <div className="flex flex-wrap gap-2 pt-1">
                 <span className="bg-white/5 px-2.5 py-1 rounded text-[10px] font-bold text-slate-300 border border-white/15 uppercase">
                   ICC Compliant
                 </span>
@@ -421,6 +421,52 @@ export default function App() {
                   Insured Car
                 </span>
               </div>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-bold text-sm text-brand-gold uppercase tracking-wider">Partner &amp; SEO Backlinks</h4>
+              <ul className="space-y-2 text-xs text-slate-300">
+                <li>
+                  <a 
+                    href="https://www.icc.illinois.gov/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-brand-gold transition-colors block border-b border-white/5 pb-1 text-xs"
+                  >
+                     Illinois Commerce Commission (ICC)
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://moversguide.usps.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-brand-gold transition-colors block border-b border-white/5 pb-1 text-xs"
+                  >
+                     USPS Official Change of Address
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.chicago.gov/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-brand-gold transition-colors block border-b border-white/5 pb-1 text-xs"
+                  >
+                     City of Chicago Parking Permits
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.cookcountyil.gov/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-brand-gold transition-colors block text-xs"
+                  >
+                     Cook County Government Portal
+                  </a>
+                </li>
+              </ul>
             </div>
 
           </div>
@@ -506,6 +552,7 @@ export default function App() {
                 <div className="text-right">
                   <span className="text-[9px] text-slate-400 uppercase font-bold block tracking-wider">Estimated Cost</span>
                   <span className="text-xl font-black text-white">${selectedInquiry.totalCost}</span>
+                  <span className="text-[8px] text-emerald-400 block tracking-wider font-bold">INCL. $100 DEPOSIT</span>
                 </div>
               </div>
 

@@ -82,7 +82,8 @@ export default function MyBookings({ bookings, onRefresh, onSelectBooking }: MyB
                   </div>
                   <div className="text-right">
                     <span className="text-lg font-black text-slate-900 block">${booking.totalCost}</span>
-                    <span className="text-[9px] uppercase font-bold text-slate-450">Est {booking.estimatedHours} hrs</span>
+                    <span className="text-[9px] uppercase font-bold text-slate-400 block">Est {booking.estimatedHours} hrs</span>
+                    <span className="text-[8px] uppercase font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-1 py-0.5 inline-block mt-1">Incl. $100 Deposit</span>
                   </div>
                 </div>
 

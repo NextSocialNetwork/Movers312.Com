@@ -73,4 +73,5 @@ export const PRICING = {
   baseHourlyRate: 150, // includes 2 movers + 16-ft box truck
   minHours: 3,
   additionalMoverRate: 50, // extra $50/hr per additional mover
+  securityDeposit: 100, // non-refundable security deposit upon booking
 };

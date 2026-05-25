@@ -34,35 +34,67 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate database write
-    setTimeout(() => {
-      const newBooking: Booking = {
-        id: 'MEG-' + Math.floor(100000 + Math.random() * 900000),
-        fullName,
-        email,
-        phone,
-        movingDate: calculatedData.movingDate,
-        movingTime,
-        fromAddress: calculatedData.fromAddress,
-        toAddress: calculatedData.toAddress,
-        homeSize: calculatedData.homeSize,
-        estimatedHours: calculatedData.hoursNeeded,
-        totalCost: calculatedData.totalPrice,
-        extraMoversCount: calculatedData.extraMovers,
-        truckIncluded: true,
-        status: 'Inquiry',
-        notes,
-        createdAt: new Date().toISOString()
-      };
+    const newBooking: Booking = {
+      id: 'MEG-' + Math.floor(100000 + Math.random() * 900000),
+      fullName,
+      email,
+      phone,
+      movingDate: calculatedData.movingDate,
+      movingTime,
+      fromAddress: calculatedData.fromAddress,
+      toAddress: calculatedData.toAddress,
+      homeSize: calculatedData.homeSize,
+      estimatedHours: calculatedData.hoursNeeded,
+      totalCost: calculatedData.totalPrice,
+      extraMoversCount: calculatedData.extraMovers,
+      truckIncluded: true,
+      status: 'Inquiry',
+      notes,
+      createdAt: new Date().toISOString()
+    };
 
-      // Store in localStorage
-      const existingBookings = JSON.parse(localStorage.getItem('mega_moving_bookings') || '[]');
-      existingBookings.unshift(newBooking);
-      localStorage.setItem('mega_moving_bookings', JSON.stringify(existingBookings));
+    // Store in localStorage
+    const existingBookings = JSON.parse(localStorage.getItem('mega_moving_bookings') || '[]');
+    existingBookings.unshift(newBooking);
+    localStorage.setItem('mega_moving_bookings', JSON.stringify(existingBookings));
 
+    // Send dispatch email securely via FormSubmit AJAX service
+    fetch('https://formsubmit.co/ajax/megamovingchicago@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `📦 NEW MEGA MOVING INQUIRY: ${newBooking.id} - ${fullName}`,
+        _cc: email, // CC the customer to guarantee copy receipt
+        "Inquiry ID": newBooking.id,
+        "Customer Name": fullName,
+        "Customer Email": email,
+        "Customer Phone": phone,
+        "Moving Date": newBooking.movingDate,
+        "Moving Time Slot": movingTime,
+        "Starting Point (From)": newBooking.fromAddress,
+        "Destination Point (To)": newBooking.toAddress,
+        "Load Configuration": HOME_SIZES[newBooking.homeSize]?.label || newBooking.homeSize,
+        "Crew Size Assigned": `${2 + newBooking.extraMoversCount} Movers`,
+        "Estimated Duration": `${newBooking.estimatedHours} Hours Required`,
+        "Total Estimated Cost": `$${newBooking.totalCost} (Includes $100 Non-Refundable Deposit)`,
+        "Special Notes": notes || 'None provided',
+        _replyto: email
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Dispatch lead successfully routed to mailbox:', data);
+    })
+    .catch(err => {
+      console.error('Failed to route dispatch email:', err);
+    })
+    .finally(() => {
       setIsSubmitting(false);
       onBookingSuccess(newBooking);
-    }, 1200);
+    });
   };
 
   return (
@@ -307,6 +339,10 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
                       <span className="font-semibold text-brand-gold">+${calculatedData.extraMovers * 50 * calculatedData.hoursNeeded}</span>
                     </div>
                   )}
+                  <div className="flex justify-between text-emerald-400">
+                    <span className="text-slate-300">Non-Refundable Security Deposit</span>
+                    <span className="font-semibold">+$100</span>
+                  </div>
                   <div className="flex justify-between">
                     <span className="text-slate-300">Fuel &amp; Cargo Straps Protection fee</span>
                     <span className="font-bold text-emerald-400">FREE</span>

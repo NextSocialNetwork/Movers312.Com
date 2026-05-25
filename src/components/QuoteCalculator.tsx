@@ -41,7 +41,9 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
   
   // Ensure we abide by 3 hours minimum
   const displayHours = Math.max(PRICING.minHours, hoursNeeded);
-  const totalPrice = totalHourlyRate * displayHours;
+  const hourlyTotal = totalHourlyRate * displayHours;
+  const securityDeposit = PRICING.securityDeposit;
+  const totalPrice = hourlyTotal + securityDeposit;
 
   const handleCalculateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -267,28 +269,32 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
 
         {/* Live Premium Estimate Summary Block */}
         <div className="bg-brand-charcoal text-white rounded-none p-8 border-l-4 border-brand-blue relative">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="space-y-2 text-center md:text-left">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-7 space-y-4 text-center md:text-left font-mono">
               <span className="inline-block text-[10px] bg-slate-800 text-slate-300 font-mono uppercase px-3 py-1 border border-slate-700 font-bold tracking-widest">
                 Real-Time Summary Analysis
               </span>
-              <h4 className="text-xl font-black uppercase tracking-tight">Estimated moving investment</h4>
-              <div className="flex flex-wrap justify-center md:justify-start gap-y-1 gap-x-4 text-xs font-mono text-slate-400 uppercase tracking-widest">
-                <span>Rate: <strong>${totalHourlyRate}/hr</strong></span>
-                <span>•</span>
-                <span>Duration: <strong>{displayHours} hrs</strong></span>
-                <span>•</span>
-                <span>Staff: <strong>{2 + extraMovers} staff</strong></span>
+              <h4 className="text-xl font-black uppercase tracking-tight font-sans">Estimated moving investment</h4>
+              
+              <div className="space-y-1.5 text-xs text-slate-300 uppercase">
+                <div className="flex justify-between md:justify-start gap-4">
+                  <span className="text-slate-400">Hourly Rate Base:</span>
+                  <span><strong>${totalHourlyRate}/hr</strong> for <strong>{displayHours} hrs</strong> (${hourlyTotal})</span>
+                </div>
+                <div className="flex justify-between md:justify-start gap-4 text-emerald-400">
+                  <span className="text-slate-400">Security Deposit:</span>
+                  <span><strong>+${securityDeposit}</strong> <span className="text-[9px] text-slate-400 bg-slate-800 px-1.5 py-0.5 font-bold uppercase">(Non-Refundable)</span></span>
+                </div>
               </div>
             </div>
 
-            <div className="text-center md:text-right min-w-[180px]">
-              <div className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">Calculated Total</div>
+            <div className="md:col-span-5 text-center md:text-right font-mono border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-6">
+              <div className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">Grand Estimated Total</div>
               <div className="text-5xl font-black text-brand-gold mt-1">
                 ${totalPrice}
               </div>
               <div className="text-[9px] text-slate-400 font-mono tracking-widest uppercase mt-2">
-                Covers Fuel, Equipment &amp; Crew Taxes
+                Includes All Taxes, Surcharges &amp; Deposit
               </div>
             </div>
           </div>
