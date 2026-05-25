@@ -415,11 +415,21 @@ export default function App() {
                 </a>
               </div>
 
+              {/* Cash App Payment Notification on Success */}
+              <div className="bg-amber-50 border-2 border-amber-305 rounded-none p-5 text-left max-w-lg mx-auto space-y-2 font-mono">
+                <span className="text-[10px] text-amber-800 font-extrabold uppercase block tracking-wider">⚠️ Paid Security Deposit Required</span>
+                <p className="text-[11px] text-slate-700 leading-relaxed font-sans normal-case font-medium">To lock your dispatch slot, the <strong className="text-slate-900">$100 security deposit</strong> must be paid via Cash App. This is deducted from the 3-hour minimum ($450 total base including the $100 security deposit), leaving a Grand Total of <strong className="text-slate-950 font-bold">${newestBooking.totalCost}</strong> due on the move day.</p>
+                <div className="bg-white p-2.5 border border-amber-200 text-xs font-black select-all flex items-center justify-between text-slate-900">
+                  <span>CASH APP TAG:</span>
+                  <span className="text-emerald-600 bg-emerald-50 px-2.5 py-1 border border-emerald-200 text-[13px] font-black select-all font-mono">$Muahz26</span>
+                </div>
+              </div>
+
               <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
                 <div className="text-slate-600 text-left space-y-1.5 uppercase text-[10px]">
                   <p>• Reserved Date: <strong className="text-slate-950">{newestBooking.movingDate}</strong></p>
                   <p>• Recommended Hours: <strong className="text-slate-950">{newestBooking.estimatedHours} hours</strong></p>
-                  <p>• Cost Projection: <strong className="text-[#0f172a] font-black">${newestBooking.totalCost}</strong> <span className="text-[9px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 border border-emerald-200 font-bold tracking-wider">Includes $100 security deposit</span></p>
+                  <p>• Cost Projection: <strong className="text-[#0f172a] font-black">${newestBooking.totalCost}</strong> <span className="text-[9px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 border border-emerald-200 font-bold tracking-wider">Remaining Day of Move balance ($100 security deposit already deducted)</span></p>
                 </div>
                 <button
                   type="button"
@@ -670,19 +680,25 @@ export default function App() {
                   </span>
                 </div>
                 <div className="text-right font-mono">
-                  <span className="text-[9px] text-slate-500 uppercase font-bold block tracking-wider">Estimated Cost</span>
-                  <span className="text-xl font-black text-white">${selectedInquiry.totalCost}</span>
-                  <span className="text-[8px] text-emerald-400 block tracking-wider font-bold animate-none uppercase">INCL. $100 DEPOSIT</span>
+                  <span className="text-[9px] text-slate-500 uppercase font-bold block tracking-wider">Grand Total (Remaining Due)</span>
+                  <span className="text-xl font-black text-emerald-400">${selectedInquiry.totalCost}</span>
+                  <span className="text-[8px] text-slate-400 block tracking-wider font-bold animate-none uppercase">$100 Security Deposit Deducted</span>
                 </div>
               </div>
 
-              <div className="bg-[#351e06]/30 p-3 border-2 border-[#542d0c]/50 border-l-4 border-brand-gold space-y-2 text-brand-gold text-left font-mono">
+              <div className="bg-[#351e06]/30 p-3 border-2 border-[#542d0c]/50 border-l-4 border-brand-gold space-y-2 text-brand-gold text-left font-mono text-[9px]">
                 <p className="font-bold text-[10px] flex items-center gap-1 uppercase tracking-wider">
                   <Clock className="w-3.5 h-3.5 text-brand-gold" />
                   What happens next?
                 </p>
                 <p className="text-[10px] leading-normal text-slate-350 uppercase">
-                  This inquiry is loaded under dispatch status <strong>Awaiting Call</strong>. To assign crew resources and standard transit routes, dial the direct office line right away or click call button.
+                  1. Send the <strong>$100 Security Deposit</strong> via Cash App: <strong className="text-white bg-emerald-600 px-1 p-0.5 rounded font-mono select-all">$Muahz26</strong>.
+                </p>
+                <p className="text-[10px] leading-normal text-slate-350 uppercase">
+                  2. This is fully deducted from your 3-hr minimum ($450 base, leaving a grand total of <strong>${selectedInquiry.totalCost}</strong> payable day of move).
+                </p>
+                <p className="text-[10px] leading-normal text-slate-350 uppercase">
+                  3. Contact hotline <strong>+1 (773) 335-5446</strong> with ID <strong>{selectedInquiry.id}</strong> to finalize scheduling slot.
                 </p>
               </div>
 

@@ -43,7 +43,7 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
   const displayHours = Math.max(PRICING.minHours, hoursNeeded);
   const hourlyTotal = totalHourlyRate * displayHours;
   const securityDeposit = PRICING.securityDeposit;
-  const totalPrice = hourlyTotal + securityDeposit;
+  const totalPrice = hourlyTotal - securityDeposit;
 
   const handleCalculateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -281,11 +281,26 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
                   <span className="text-slate-400">Hourly Rate Base:</span>
                   <span className="text-white"><strong>${totalHourlyRate}/hr</strong> for <strong>{displayHours} hrs</strong> (${hourlyTotal})</span>
                 </div>
-                <div className="flex justify-between md:justify-start gap-4 text-[#0284c7]">
+                <div className="flex justify-between md:justify-start gap-4 text-[#ef4444]">
                   <span className="text-slate-400">Security Deposit:</span>
-                  <span><strong>+${securityDeposit}</strong> <span className="text-[9px] text-slate-400 bg-slate-900 border border-slate-800 px-1.5 py-0.5 font-bold uppercase">(Non-Refundable)</span></span>
+                  <span><strong>-${securityDeposit}</strong> <span className="text-[9px] text-[#fca5a5] bg-[#ef4444]/15 border border-[#ef4444]/30 px-1.5 py-0.5 font-bold uppercase">(Deducted from Total)</span></span>
                 </div>
               </div>
+
+              {/* Cash App Payment Note */}
+              <div className="bg-amber-950/40 p-4 border border-amber-500/30 border-l-4 border-amber-500 text-amber-300 rounded-none text-[10px] uppercase tracking-normal">
+                <div className="font-bold flex items-center gap-1.5 mb-1 text-amber-200">
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  Booking Security Deposit
+                </div>
+                <p className="text-slate-350 leading-relaxed font-sans normal-case">
+                  Security Deposit is deducted from the 3-hour minimum <strong className="text-white">$450 total</strong> (which includes the $100 security deposit).
+                </p>
+                <div className="mt-2 text-amber-400 font-black tracking-wider text-[11px] bg-amber-950/60 p-2 border border-amber-500/10">
+                  ⚠️ Security Deposit Must be Paid via Cash App: <span className="text-white bg-emerald-600 px-2 py-0.5 select-all">$Muahz26</span>
+                </div>
+              </div>
+
             </div>
 
             <div className="md:col-span-5 text-center md:text-right font-mono border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-6">
@@ -294,7 +309,7 @@ export default function QuoteCalculator({ onCalculate, initialData }: QuoteCalcu
                 ${totalPrice}
               </div>
               <div className="text-[9px] text-slate-400 font-mono tracking-widest uppercase mt-2">
-                Includes All Taxes, Surcharges &amp; Deposit
+                Remaining Balance Due after Deposit
               </div>
             </div>
           </div>

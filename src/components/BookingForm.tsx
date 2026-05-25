@@ -79,7 +79,9 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
         "Load Configuration": HOME_SIZES[newBooking.homeSize]?.label || newBooking.homeSize,
         "Crew Size Assigned": `${2 + newBooking.extraMoversCount} Movers`,
         "Estimated Duration": `${newBooking.estimatedHours} Hours Required`,
-        "Total Estimated Cost": `$${newBooking.totalCost} (Includes $100 Non-Refundable Deposit)`,
+        "Grand Total (Remaining Due on Move Day)": `$${newBooking.totalCost}`,
+        "Deducted Security Deposit (Cash App: $Muahz26)": "$100",
+        "Total Base Cost": `$${newBooking.totalCost + 100}`,
         "Special Notes": notes || 'None provided',
         _replyto: email
       })
@@ -226,6 +228,20 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
               />
             </div>
 
+            {/* Cash App Payment Note inside Booking Form */}
+            <div className="bg-amber-50 text-amber-950 rounded-none p-5 border-2 border-amber-200 border-l-4 border-amber-500 space-y-2">
+              <div className="font-bold text-xs uppercase tracking-wide font-mono flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 bg-amber-500 rounded-full animate-ping shrink-0"></span>
+                <span>Security Deposit Instruction</span>
+              </div>
+              <p className="text-xs leading-relaxed font-sans font-medium normal-case">
+                Our 3-hour minimum is <strong className="text-amber-950 font-bold">$450 total</strong> which includes the <strong className="text-amber-950 font-bold">$100 security deposit</strong>. The security deposit is deducted from your moving total, leaving a remaining balance of <strong className="text-amber-100 bg-[#0f172a] px-1.5 py-0.5">${calculatedData.totalPrice}</strong> on completion.
+              </p>
+              <div className="bg-amber-100 p-3 border border-amber-300 font-mono text-[10px] font-black uppercase text-amber-950">
+                ⚠️ Security Deposit Must be Paid via Cash App: <span className="bg-emerald-600 text-white px-2 py-0.5 text-xs inline-block tracking-widest select-all font-bold font-mono">$Muahz26</span>
+              </div>
+            </div>
+
             {/* Direct Instant Confirmation Notice */}
             <div className="bg-emerald-50 text-slate-800 rounded-none p-5 border-2 border-emerald-200 border-l-4 border-emerald-500 flex items-start gap-4">
               <Shield className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
@@ -339,9 +355,9 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
                        <span className="font-semibold text-[#f59e0b]">+${calculatedData.extraMovers * 50 * calculatedData.hoursNeeded}</span>
                      </div>
                   )}
-                  <div className="flex justify-between text-[#0284c7]">
-                    <span className="text-slate-300">Non-Refundable Security Deposit</span>
-                    <span className="font-semibold">+$100</span>
+                  <div className="flex justify-between text-[#ef4444]">
+                    <span className="text-slate-300">Deducted Security Deposit (Paid via Cash App)</span>
+                    <span className="font-semibold">-$100</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-300">Fuel &amp; Cargo Straps Protection fee</span>
@@ -357,6 +373,7 @@ export default function BookingForm({ calculatedData, onBack, onBookingSuccess }
                   <div className="text-right">
                     <span className="text-[10px] text-slate-400 font-semibold block uppercase font-mono">Grand Estimated Total</span>
                     <span className="text-2xl font-black text-white">${calculatedData.totalPrice}</span>
+                    <span className="text-[8px] text-emerald-400 block tracking-wider font-extrabold select-none mt-1">(Payable Day of Move)</span>
                   </div>
                 </div>
               </div>
