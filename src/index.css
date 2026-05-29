@@ -6,7 +6,7 @@
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Premium High-Contrast Light Theme Palette */
+  /* Premium Modern Light Theme Color Palette */
   --color-brand-blue: #2563eb;
   --color-brand-cyan: #0284c7;
   --color-brand-gold: #f59e0b;
@@ -18,6 +18,9 @@ body {
   font-family: var(--font-sans);
   background-color: #f8fafc; /* Pristine light slate */
   color: #1e293b; /* Readable dark grey */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(2, 132, 199, 0.02) 0px, transparent 50%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,74 +36,94 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 4px solid var(--color-brand-gold);
 }
 
-/* Tactical 3D card layout with rigid solid drop shadow and polished border lines */
+/* Premium modern card layout with beautiful soft volumetric shadows and polished borders */
 .td-card {
-  background-color: #ffffff; /* Crisp White */
-  border: 2px solid #0f172a; /* Sharp Charcoal */
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1rem; /* Soft elegant rounded corners */
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 2px 8px -1px rgba(15, 23, 42, 0.01);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .td-card:hover {
-  border-color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.06), 0 4px 12px -2px rgba(37, 99, 235, 0.02);
+  transform: translateY(-2px);
 }
 
-/* Pressed 3D elements */
+/* Ultra-modern sleek button style - Blue */
 .td-btn-blue {
   background-color: #2563eb;
   color: #ffffff;
-  border: 2px solid #0f172a;
-  border-bottom: 5px solid #0f172a; /* 3D bottom thickness */
-  font-weight: 700;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 0.75rem; /* Polished rounded corners */
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.1s ease;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .td-btn-blue:hover {
   background-color: #1d4ed8;
-  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .td-btn-blue:active {
-  border-bottom-width: 1px;
-  transform: translateY(4px);
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
 }
 
+/* Ultra-modern sleek button style - Gold */
 .td-btn-gold {
   background-color: #f59e0b;
   color: #0f172a;
-  border: 2px solid #0f172a;
-  border-bottom: 5px solid #78350f; /* 3D bottom thickness */
-  font-weight: 800;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0.75rem; /* Modern rounded corners */
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.1s ease;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .td-btn-gold:hover {
   background-color: #fbbf24;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .td-btn-gold:active {
-  border-bottom-width: 1px;
-  transform: translateY(4px);
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
 }
 
-/* 3D sunken inputs */
+/* Beautiful modern input styling */
 .td-input {
   background-color: #ffffff !important;
   color: #0f172a !important;
-  border: 2px solid #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-radius: 0.75rem !important; /* Soft corners */
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.02) !important;
   transition: all 0.2s ease;
 }
 .td-input:focus {
   border-color: #2563eb !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08), inset 0 1px 2px rgba(15, 23, 42, 0.02) !important;
   outline: none !important;
 }
 
 .geo-card {
   background-color: #ffffff;
-  border: 2px solid #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1rem;
 }
 
 .font-black-header {
   font-family: var(--font-display);
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 0.95;
+}
+
+/* Elegant Dotted Grid Background Pattern for modern tech/modern layout styling */
+.dot-grid-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
 }

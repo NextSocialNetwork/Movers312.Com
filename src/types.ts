@@ -1,5 +1,5 @@
 /**
- * Types and interfaces for Mega Moving Chicago
+ * Types and interfaces for Movers312.Com
  */
 
 export interface Booking {

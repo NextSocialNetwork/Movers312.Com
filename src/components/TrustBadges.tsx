@@ -39,7 +39,7 @@ export default function TrustBadges() {
       location: "Wicker Park, Chicago",
       stars: 5,
       date: "April 2026",
-      text: "Mega Moving made our Logan Square move remarkably simple. We locked in the 3 hr minimum and they finished packing, driving, and unpacking in 3 hours flat. Highly recommend this local Chicago crew!"
+      text: "Movers312.Com made our Logan Square move remarkably simple. We locked in the 3 hr minimum and they finished packing, driving, and unpacking in 3 hours flat. Highly recommend this local Chicago crew!"
     },
     {
       name: "Darnell T.",
@@ -68,7 +68,7 @@ export default function TrustBadges() {
             What is Included with your $150/hr Rate?
           </h3>
           <p className="text-xs text-slate-500 font-mono">
-            Unlike other movers who tack on charges for basic materials, Mega Moving provides everything you need out-of-the-box.
+            Unlike other movers who tack on charges for basic materials, Movers312.Com provides everything you need out-of-the-box.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function TrustBadges() {
             </div>
 
             <p className="text-[10px] text-slate-450 font-mono leading-relaxed uppercase pt-2 border-t border-slate-800">
-              *Moving outside of Typical Cook County or Chicago city limits? Contact our team directly on <a href="tel:+17733355446" className="text-brand-cyan hover:underline font-bold">+1 (773) 335-5446</a> to calculate correct mileage surcharges.
+              *Moving outside of Typical Cook County or Chicago city limits? Contact our team directly on <a href="tel:+13123859229" className="text-brand-cyan hover:underline font-bold">+1 (312) 385-9229</a> to calculate correct mileage surcharges.
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export default function TrustBadges() {
             Loved By Real Chicago Neighbors
           </h3>
           <p className="text-xs text-slate-500 font-mono">
-            See how the Mega Moving professional movers and our custom 16-foot truck make the difference.
+            See how the Movers312.Com professional movers and our custom 16-foot truck make the difference.
           </p>
         </div>
 
