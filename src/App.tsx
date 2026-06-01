@@ -19,7 +19,6 @@ import {
 import { Booking } from './types';
 
 // Asset Imports
-import movers312Logo from './assets/images/movers312_logo_1780072510407.png';
 
 // Chicago Zips distance coordinate estimation grid (positioned for standard SVG viewbox)
 const CHICAGO_NEIGHBORHOODS: { [key: string]: { name: string; x: number; y: number } } = {
@@ -311,12 +310,9 @@ export default function App() {
           
           {/* Logo brand */}
           <div className="flex items-center gap-4">
-            <img 
-              id="header-logo-image"
-              src={movers312Logo} 
-              alt="Movers312 Logo" 
-              className="h-10 w-auto object-contain transition-all hover:scale-105 duration-300 pointer-events-none" 
-            />
+            <div className="bg-emerald-600 text-[#faf9f5] p-2 rounded-lg flex items-center justify-center shadow-xs border border-emerald-500/20">
+              <Truck className="w-5 h-5" />
+            </div>
             <div className="h-8 w-px bg-[#e9e7df]"></div>
             <div>
               <div className="flex items-baseline leading-none gap-0.5">
@@ -1746,12 +1742,9 @@ export default function App() {
           
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <img 
-                id="footer-logo-image"
-                src={movers312Logo} 
-                alt="Movers312 Logo" 
-                className="h-8 w-auto object-contain bg-white rounded-md p-1" 
-              />
+              <div className="bg-[#30D5C8]/10 text-[#30D5C8] p-2 rounded-lg flex items-center justify-center border border-[#30D5C8]/20">
+                <Truck className="w-4 h-4" />
+              </div>
               <div>
                 <span className="text-white font-black text-xs">MOVERS</span>
                 <span className="text-[#30D5C8] font-black text-xs">312</span>
