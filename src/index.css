@@ -1,129 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-
-  /* Premium Modern Light Theme Color Palette */
-  --color-brand-blue: #2563eb;
-  --color-brand-cyan: #0284c7;
-  --color-brand-gold: #f59e0b;
-  --color-brand-charcoal: #0f172a;
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-brand-primary: #122119;
+  --color-brand-accent: #15803d;
+  --color-brand-warm: #fcfbf7;
 }
 
-/* Custom base style overrides for premium clean light-theme */
-body {
-  font-family: var(--font-sans);
-  background-color: #f8fafc; /* Pristine light slate */
-  color: #1e293b; /* Readable dark grey */
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
-    radial-gradient(at 50% 0%, rgba(2, 132, 199, 0.02) 0px, transparent 50%);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+/* Custom layout keyframe transitions and premium polish */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* 3D Extrusion Design Utilities with premium shadows and active states */
-.geo-border-heavy {
-  border-left: 4px solid var(--color-brand-blue);
+@keyframes mapLinePulse {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
 }
 
-.geo-border-charcoal {
-  border-left: 4px solid var(--color-brand-gold);
+@keyframes pulseRing {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 0.8; }
 }
 
-/* Premium modern card layout with beautiful soft volumetric shadows and polished borders */
-.td-card {
-  background-color: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 1rem; /* Soft elegant rounded corners */
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 2px 8px -1px rgba(15, 23, 42, 0.01);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.td-card:hover {
-  border-color: rgba(37, 99, 235, 0.25);
-  box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.06), 0 4px 12px -2px rgba(37, 99, 235, 0.02);
-  transform: translateY(-2px);
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Ultra-modern sleek button style - Blue */
-.td-btn-blue {
-  background-color: #2563eb;
-  color: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  border-radius: 0.75rem; /* Polished rounded corners */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.td-btn-blue:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-.td-btn-blue:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+.animate-map-pulse {
+  animation: mapLinePulse 1.2s linear infinite;
 }
 
-/* Ultra-modern sleek button style - Gold */
-.td-btn-gold {
-  background-color: #f59e0b;
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 0.75rem; /* Modern rounded corners */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.td-btn-gold:hover {
-  background-color: #fbbf24;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-.td-btn-gold:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+.animate-ring-pulse {
+  animation: pulseRing 2s ease-in-out infinite;
 }
 
-/* Beautiful modern input styling */
-.td-input {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border: 1px solid rgba(15, 23, 42, 0.12) !important;
-  border-radius: 0.75rem !important; /* Soft corners */
-  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.02) !important;
-  transition: all 0.2s ease;
-}
-.td-input:focus {
-  border-color: #2563eb !important;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08), inset 0 1px 2px rgba(15, 23, 42, 0.02) !important;
-  outline: none !important;
-}
-
-.geo-card {
-  background-color: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 1rem;
-}
-
-.font-black-header {
-  font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-}
-
-/* Elegant Dotted Grid Background Pattern for modern tech/modern layout styling */
-.dot-grid-pattern {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
-  background-size: 24px 24px;
-}

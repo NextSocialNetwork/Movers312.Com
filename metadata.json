@@ -1,6 +1,10 @@
 {
-  "name": "Movers312.Com - Moving Company",
-  "description": "Professional moving services in Chicago with 16 foot box truck and professional movers included. Clear hourly rate of $150/hour with a 3-hour minimum.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "Movers312",
+  "description": "Chicago's premier booking and relocation services provider, featuring an active 16-ft Ford F-350 moving fleet, dynamic quote estimation, and real-time residential booking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

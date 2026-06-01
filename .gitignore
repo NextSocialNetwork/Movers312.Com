@@ -1,8 +1,35 @@
-node_modules/
-build/
-dist/
-coverage/
-.DS_Store
+# logs
+logs
 *.log
-.env*
-!.env.example
+npm-debug.log*
+
+# dependency directories
+node_modules/
+jspm_packages/
+
+# Debugger logs
+flamegraph.html
+npm-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Output directory
+dist/
+dist-ssr/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
