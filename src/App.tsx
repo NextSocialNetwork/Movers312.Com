@@ -17,6 +17,8 @@ import {
   HelpCircle
 } from 'lucide-react';
 import { Booking } from './types';
+import { AiSupportChat } from './components/AiSupportChat';
+import { LanguageSwitcher } from './i18n/LanguageContext';
 
 // Asset Imports
 
@@ -57,7 +59,7 @@ export default function App() {
   const [packingKit, setPackingKit] = useState(false);
   const [stairLevel, setStairLevel] = useState<'none' | 'stairs' | 'walkway'>('none');
   const [crewAndTruck, setCrewAndTruck] = useState<'2movers_16ft' | '3movers_26ft' | '4movers_26ft'>('2movers_16ft');
-  const [estimatedHours, setEstimatedHours] = useState(3); // Default to 3 hours based on user preference
+  const [estimatedHours, setEstimatedHours] = useState(2); // Default to 2 hours based on user preference
 
   // Live calculated cost states
   const [basePrice, setBasePrice] = useState(360);
@@ -113,8 +115,8 @@ export default function App() {
 
   // Live pricing recalculator engine
   useEffect(() => {
-    // 1. Base Rate (Hourly based: $120/hr, $180/hr, or $230/hr depending on chosen option, 3 hours minimum enforced)
-    const activeHours = Math.max(3, estimatedHours);
+    // 1. Base Rate (Hourly based: $120/hr, $180/hr, or $230/hr depending on chosen option, 2 hours minimum enforced)
+    const activeHours = Math.max(2, estimatedHours);
     const hourlyRate = crewAndTruck === '2movers_16ft' ? 120 : crewAndTruck === '3movers_26ft' ? 180 : 230;
     const base = activeHours * hourlyRate;
     setBasePrice(base);
@@ -325,6 +327,7 @@ export default function App() {
 
           {/* Quick CTAs */}
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <a
               id="header-call-cta"
               href="tel:+13123859229"
@@ -448,7 +451,7 @@ export default function App() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {(['studio', '1bed', '2bed', '3bed_plus'] as const).map((key) => {
                     const selected = sizeOfMove === key;
-                    const recommendedHours = key === 'studio' ? 3 : key === '1bed' ? 4 : key === '2bed' ? 6 : 8;
+                    const recommendedHours = key === 'studio' ? 2 : key === '1bed' ? 3 : key === '2bed' ? 5 : 7;
                     const pricingText = `Est. ${recommendedHours} Hrs`;
                     return (
                       <button
@@ -497,7 +500,7 @@ export default function App() {
                         }`}
                       >
                         <div className="text-xs font-black tracking-tight">2 Movers & 16-FT Urban Fleet</div>
-                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$120/Hr (3h min)</div>
+                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$120/Hr (2h min)</div>
                         {crewAndTruck === '2movers_16ft' && <div className="absolute right-0 top-0 bg-emerald-600 text-white text-[8px] font-mono font-black uppercase px-2 py-0.5 rounded-bl">Active</div>}
                       </button>
                       <button
@@ -510,7 +513,7 @@ export default function App() {
                         }`}
                       >
                         <div className="text-xs font-black tracking-tight">3 Movers & 26-FT Urban Fleet</div>
-                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$180/Hr (3h min)</div>
+                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$180/Hr (2h min)</div>
                         {crewAndTruck === '3movers_26ft' && <div className="absolute right-0 top-0 bg-emerald-600 text-white text-[8px] font-mono font-black uppercase px-2 py-0.5 rounded-bl">Active</div>}
                       </button>
                       <button
@@ -523,7 +526,7 @@ export default function App() {
                         }`}
                       >
                         <div className="text-xs font-black tracking-tight">4 Movers & 26-FT Urban Fleet</div>
-                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$230/Hr (3h min)</div>
+                        <div className="text-[10px] font-mono text-[#5e6c62] mt-1 font-bold bg-slate-150/40 w-fit px-1.5 py-0.5 rounded">$230/Hr (2h min)</div>
                         {crewAndTruck === '4movers_26ft' && <div className="absolute right-0 top-0 bg-emerald-600 text-white text-[8px] font-mono font-black uppercase px-2 py-0.5 rounded-bl">Active</div>}
                       </button>
                     </div>
@@ -539,7 +542,7 @@ export default function App() {
                           {crewAndTruck === '2movers_16ft' ? '2 Movers & 16-FT Box Truck (Urban Fleet)' : crewAndTruck === '3movers_26ft' ? '3 Movers & 26-FT Box Truck (Urban Fleet)' : '4 Movers & 26-FT Box Truck (Urban Fleet)'}
                         </span>
                         <span className="text-[10px] uppercase font-mono tracking-widest font-extrabold text-[#122119] bg-slate-100 px-2.5 py-0.5 rounded border border-gray-200">
-                          3 Hrs Min
+                          2 Hrs Min
                         </span>
                       </div>
                       <h4 className="text-xs font-bold text-[#122119] mt-2 font-sans">Adjust Estimated Duration</h4>
@@ -547,8 +550,8 @@ export default function App() {
                     <div className="flex items-center gap-3 bg-[#f2f1ec] px-3 py-1.5 rounded-lg border border-[#cbd2cd] self-stretch sm:self-auto justify-between">
                       <button 
                         type="button" 
-                        onClick={() => setEstimatedHours(h => Math.max(3, h - 1))}
-                        disabled={estimatedHours <= 3}
+                        onClick={() => setEstimatedHours(h => Math.max(2, h - 1))}
+                        disabled={estimatedHours <= 2}
                         className="w-7 h-7 rounded-md bg-white hover:bg-emerald-50 text-[#122119] border border-[#cbd2cd] disabled:opacity-30 disabled:hover:bg-white font-mono font-bold text-sm transition flex items-center justify-center cursor-pointer select-none"
                       >
                         -
@@ -1787,6 +1790,7 @@ export default function App() {
         </div>
       </footer>
       
+      <AiSupportChat />
     </div>
   );
 }
