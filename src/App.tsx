@@ -1206,7 +1206,7 @@ export default function App() {
                     <div className="flex items-center gap-1.5 text-[#00D632] font-bold">
                       <span>Deposit Required</span>
                       <a 
-                        href="https://cash.app/$Movers312" 
+                        href="https://cash.app/$muahz26" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="text-[8px] font-mono tracking-wider font-extrabold text-[#00D632] bg-emerald-950/80 hover:bg-emerald-900 border border-[#00D632]/35 px-2 py-0.5 rounded shrink-0 transition"
@@ -1360,12 +1360,12 @@ export default function App() {
                   </p>
                 </div>
                 <a 
-                  href="https://cash.app/$Movers312"
+                  href="https://cash.app/$muahz26"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto shrink-0 bg-[#00D632] hover:bg-[#00b529] text-black font-black px-5 py-3 rounded-xl font-mono text-center shadow-lg transition-all duration-200 flex items-center justify-center gap-2 group border border-emerald-400/30"
                 >
-                  <span>$Movers312 ➔</span>
+                  <span>$muahz26 ➔</span>
                 </a>
               </div>
             </div>

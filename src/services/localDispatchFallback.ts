@@ -39,7 +39,7 @@ Our drivers are experts with tight Chicago alley parking, vintage walkups, and d
     }
 
     if (q.includes('deposit') || q.includes('cash app') || q.includes('cancel') || q.includes('payment') || q.includes('pay')) {
-      return `To secure your moving date and dispatch our crew, a **$100 security deposit** is required via Cash App to **$Movers312** (please include your Reservation ID in the memo). 
+      return `To secure your moving date and dispatch our crew, a **$100 security deposit** is required via Cash App to **$muahz26** (please include your Reservation ID in the memo). 
 
 The remaining balance is paid on moving day upon job completion. Please note our transparent policy: if you cancel your booking, the $100 security deposit is retained as a cancellation fee. Questions? Call **(312) 385-9229**.`;
     }

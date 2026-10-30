@@ -225,7 +225,7 @@ export const InfoPagesModal: React.FC<InfoPagesModalProps> = ({
                     <span>$100 Security Deposit & Cancellation Fee Policy</span>
                   </h3>
                   <p className="text-amber-200/80 leading-relaxed">
-                    To lock in your driver dispatch, truck reservation, and crew assignment on your selected date, a <strong>$100 security deposit via Cash App to $Movers312</strong> is required. <strong>In case you cancel your move, the $100 security deposit will be kept as a cancellation fee</strong> to cover crew scheduling and truck holding reservations.
+                    To lock in your driver dispatch, truck reservation, and crew assignment on your selected date, a <strong>$100 security deposit via Cash App to $muahz26</strong> is required. <strong>In case you cancel your move, the $100 security deposit will be kept as a cancellation fee</strong> to cover crew scheduling and truck holding reservations.
                   </p>
                 </div>
 
@@ -287,7 +287,7 @@ export const InfoPagesModal: React.FC<InfoPagesModalProps> = ({
                 <div className="border-l-2 border-[#30D5C8] pl-3 space-y-1">
                   <h3 className="font-bold text-white">Chat Data Handling & Security</h3>
                   <p className="text-[#a4ccb6]/80">
-                    Chat interactions are processed in real-time to answer your inquiries. <strong>Do not enter sensitive financial account credentials or full credit card numbers directly into the chat window.</strong> All security deposits are handled independently via Cash App ($Movers312).
+                    Chat interactions are processed in real-time to answer your inquiries. <strong>Do not enter sensitive financial account credentials or full credit card numbers directly into the chat window.</strong> All security deposits are handled independently via Cash App ($muahz26).
                   </p>
                 </div>
 

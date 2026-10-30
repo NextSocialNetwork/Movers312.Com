@@ -104,7 +104,7 @@ export const translations = {
     successTitle: "Move Reservation Confirmed!",
     reservationId: "Reservation ID",
     depositHeader: "Cash App Deposit Instructions",
-    depositBody: "Please send your $100 security deposit via Cash App to $Movers312 with your Reservation ID in the memo to finalize driver assignment.",
+    depositBody: "Please send your $100 security deposit via Cash App to $muahz26 with your Reservation ID in the memo to finalize driver assignment.",
     printReceipt: "Print / Save Confirmation Receipt",
     calculateAnother: "Calculate Another Quote",
 
@@ -241,7 +241,7 @@ export const translations = {
     successTitle: "¡Reserva de Mudanza Confirmada!",
     reservationId: "ID de Reserva",
     depositHeader: "Instrucciones de Depósito en Cash App",
-    depositBody: "Por favor envíe su depósito de seguridad de $100 vía Cash App a $Movers312 con su ID de Reserva en la nota para finalizar la asignación del equipo.",
+    depositBody: "Por favor envíe su depósito de seguridad de $100 vía Cash App a $muahz26 con su ID de Reserva en la nota para finalizar la asignación del equipo.",
     printReceipt: "Imprimir / Guardar Recibo de Confirmación",
     calculateAnother: "Calcular Otra Cotización",
 
@@ -378,7 +378,7 @@ export const translations = {
     successTitle: "Perkraustymo Rezervacija Patvirtinta!",
     reservationId: "Rezervacijos ID",
     depositHeader: "Cash App Depozito Instrukcijos",
-    depositBody: "Prašome atsiųsti $100 saugumo depozitą per Cash App adresu $Movers312, nurodant savo Rezervacijos ID pastabose.",
+    depositBody: "Prašome atsiųsti $100 saugumo depozitą per Cash App adresu $muahz26, nurodant savo Rezervacijos ID pastabose.",
     printReceipt: "Spausdinti / Išsaugoti Patvirtinimą",
     calculateAnother: "Skaičiuoti Kitą Kainą",
 
@@ -515,7 +515,7 @@ export const translations = {
     successTitle: "Бронирование Переезда Подтверждено!",
     reservationId: "ID Бронирования",
     depositHeader: "Инструкция по Депозиту в Cash App",
-    depositBody: "Пожалуйста, отправьте залог $100 через Cash App на $Movers312, указав ваш ID Бронирования в примечании для финализации выезда.",
+    depositBody: "Пожалуйста, отправьте залог $100 через Cash App на $muahz26, указав ваш ID Бронирования в примечании для финализации выезда.",
     printReceipt: "Распечатать / Сохранить Квитанцию",
     calculateAnother: "Рассчитать Другой Переезд",
 
@@ -652,7 +652,7 @@ export const translations = {
     successTitle: "引越しのご予約が完了しました！",
     reservationId: "予約ID",
     depositHeader: "Cash App デポジット送金手順",
-    depositBody: "ドライバーの配置を確定するため、Cash Appで $100 を $Movers312 宛に送金し、メモ欄に予約IDをご記入ください。",
+    depositBody: "ドライバーの配置を確定するため、Cash Appで $100 を $muahz26 宛に送金し、メモ欄に予約IDをご記入ください。",
     printReceipt: "予約確認書を印刷 / 保存",
     calculateAnother: "新しいお見積もりを計算",
 
@@ -789,7 +789,7 @@ export const translations = {
     successTitle: "تم تأكيد حجز نقل الأثاث بنجاح!",
     reservationId: "رقم الحجز",
     depositHeader: "تعليمات دفع العربون عبر Cash App",
-    depositBody: "يرجى إرسال عربون التأمين بقيمة 100$ عبر Cash App إلى $Movers312 مع كتابة رقم الحجز في الملاحظات لتأكيد السائق.",
+    depositBody: "يرجى إرسال عربون التأمين بقيمة 100$ عبر Cash App إلى $muahz26 مع كتابة رقم الحجز في الملاحظات لتأكيد السائق.",
     printReceipt: "طباعة / حفظ إيصال التأكيد",
     calculateAnother: "حساب عرض سعر آخر",
 
